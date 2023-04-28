@@ -1,0 +1,286 @@
+/* ---------- root variables ---------- */
+:root {
+    --green: rgb(249, 250, 250);
+    --light-green: rgb(101, 77, 129);
+    --light-grey: #f60606;
+    --text-color-light: #d29494;
+    --text-color-dark: #e31515;
+    --white: #efe9e9;
+    --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+body {
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+header a {
+	color: none;
+	font-size: 25px;
+	text-decoration: none; 
+	display: block;
+	margin: 0 auto;
+	padding: 20px;
+	width: fit-content;
+}
+
+
+header h1 {
+	color: rgba(245, 245, 245, 0.714);
+	font-size: 25px;
+	margin: 0;
+    text-align: center;
+}
+
+header h1:hover {
+	color: #ccc;
+}
+
+
+footer {
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  float: left;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* white color with 80% opacity */
+}
+
+
+footer ul {
+	margin: 0;
+	padding: 0;
+    float: left;
+	list-style-type: none;
+}
+
+footer li {
+	display: inline-block;
+	margin: 0 65px;
+}
+
+footer li a {
+	color: rgba(0, 0, 0, 0.714);
+	font-size: 20px;
+	text-decoration: none;
+}
+
+footer li a:hover {
+	color: #ccc;
+}
+
+
+
+/* ---------- main page styling ---------- */
+main {
+    background: black;
+    animation: fadeIn 0.4s;
+    padding: 190px 0 0;
+}
+
+/* ---------- animations ---------- */
+/* fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---------- grid container styling ---------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em;
+}
+
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1500px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* ---------- grid item styling ---------- */
+
+.grid-item {
+    box-shadow: 1px 1px 8px rgba(70, 67, 67, 0.25);
+    padding: 1.5em;
+    background-color: var(--white);
+    transition: 0.5s;
+    animation: fadeIn 0.5s;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    box-shadow: 0 8px 16px 0 var(--green);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.grid-item p {
+    margin: 0.3em 0;
+}
+
+.grid-item h3:first-letter,
+.grid-item p:first-letter {
+    text-transform: uppercase;
+}
+
+/* ---------- buttons in grid container ---------- */
+
+.grid-container .btns {
+    padding: 1em 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.grid-container .btns button {
+    width: 100%;
+}
+
+/* ---------- form styling ---------- */
+/* input form styling */
+form {
+    margin: 2em auto 0;
+    background-color: var(--light-green);
+    padding: 1em 1em 2em;
+    text-align: center;
+}
+
+button {
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid var(--green);
+    color: var(--text-color-light);
+    background-color: var(--green);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    width: 100%;
+    max-width: 380px;
+}
+
+header button {
+    color: var(--green);
+    background-color: var(--light-green);
+    box-shadow: 1px 1px 8px rgba(187, 41, 41, 0.25);
+}
+
+input {
+    margin: 1em auto;
+    width: 100%;
+    max-width: 350px;
+    padding: 1em;
+    border: 2px solid white;
+    display: block;
+    background: var(--white);
+}
+
+.btn-cancel {
+    background: var(--light-green);
+    margin: 0 0 1em;
+}
+
+select {
+    background-color: var(--green);
+    border: none;
+    color: var(--text-color-light);
+    padding: 1em;
+    margin: 1em;
+    max-width: 350px;
+}
+
+/* ---------- dialog styling ---------- */
+
+dialog {
+    border-color: var(--green);
+    background-color: var(--light-green);
+    width: 65vw;
+    padding: 2em 1em;
+}
+
+dialog::backdrop {
+    background: rgb(172, 198, 201, 0.8);
+}
+
+.dialog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+dialog h4 {
+    margin-bottom: 0;
+}
+dialog ul {
+    margin: 0.5em 0 1em;
+    padding-inline-start: 1.5em;
+}
+dialog p {
+    text-align: center;
+}
+
+/* ---------- tools grid styling ---------- */
+
+.tools-grid {
+    background-color: var(--light-grey);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em;
+    justify-content: space-between;
+    justify-items: stretch;
+}
+
+@media (min-width: 600px) {
+    .tools-grid {
+        grid-template-columns: auto auto;
+        margin: 1em auto;
+    }
+}
+
+.tools-grid label {
+    max-width: 350px;
+}
